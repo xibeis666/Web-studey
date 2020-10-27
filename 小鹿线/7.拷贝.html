@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 浅拷贝
+        var arr1 = [1,2,3];
+        var brr1 = arr1;
+
+        arr1[0]="XXX";
+        console.log(arr1,brr1);
+
+        var obj1 = {
+            age: 18,
+            arr: [1,2,3]
+        }
+        function copy1(obj1) {
+            var obj2 = {};
+            for (var k in obj1) {
+                obj2[k] = obj1[k];
+            }
+            return obj2;
+        }
+        var obj2 = copy1(obj1);
+        obj1.arr[0] = "5"; 
+        console.log(obj1,obj2);
+
+        // 深拷贝
+        var obj3  = { // 原始对象
+            age: 18,
+            arr: [1,2,3]
+        }
+        var obj4 = {}; // 自己对象
+
+        function copy2(obj3,obj4) {
+            for (var k in obj3) {
+                if(typeof obj3[k] === 'object') {
+                    obj4[k] = (obj3[k].constructor === Array)?[]:{};
+                    copy2(obj3[k],obj4[k]);
+                }else {
+                    obj4[k] = obj3[k];
+                }
+            }
+            return obj4;
+        }
+        var obj4 = copy2 (obj3,obj4);
+        obj3.arr[0] = "jia";
+        console.log(obj3.arr,obj4.arr);
+
+    </script>
+</body>
+</html>
