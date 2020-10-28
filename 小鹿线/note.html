@@ -13,14 +13,51 @@
         3. 最常用一种方式(after)
     2) CSS优先级
     ！important > 行内（style）> 标签 > class（类） > tag（id）
-    3) JS优先级
-    变量>函数>参数>提升
+            变量>函数>参数>提升
     4) 拷贝
     浅拷贝：拷贝对象属性，问题：一个改变，互相影响。
     深拷贝: 拷贝源对象,解决：一个改变，互相不影响
-
+    5) 判断一个东西是否为数组
+    instanceof 
+    [].__proto__.constructor === Array
+    6) 数组方法
+    push   : 向数组末尾添加内容，返回数组长度，改变原数组
+    unshift: 向数组第一位添加内容，返回数组长度，改变原数组
+    pop  : 删除数组末尾，返回删除谁，改变原数组
+    shift: 删除数组第一位，返回删除谁，改变原数组
+    7) dom操作
+    添加：appendChild
+    移除：removeChild
+    移动：replaceChild
+    插入：insertBefore
+    复制：clone
+    创建：creatElement
+    查找节点：getElementById
+    8) 阻止冒泡和默认行为
+    阻止冒泡:
+    if(e.stopPropagation) {
+        e.stopPropagation(); //w3c
+    } else {
+        e.cancelBubble = true; // ie
+    }
+    阻止默认行为：
+     if (e.preventDefault) {
+        e.preventDefault();
+    } else {
+        e.returnValue = false;
+    }
+    9) new 操作符具体做了什么
+        1>创建对象
+        2>赋值操作（给予属性或方法）
+        3>this指向（函数.call（对象））
+    10) js中延迟加载
+        <script src = 'a.js' async></script>
+        <script src = 'b.js' defer='defer'></script>
+    11) use strict 
+    是什么： 严格模式(解决一下js的怪癖行为)
+    好处： 使代码更严谨，压缩节约文件大小
+    坏处： 阻塞后面代码的运行，压缩出现错误
     -->
 
 </body>
-</html>
-
+</html>                                 

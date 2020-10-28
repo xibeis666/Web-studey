@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com" id='oA'>aaaaa</a>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    <script>
+        div1.onclick = function(e) {
+            alert('div1')
+        }
+        div2.onclick = function(e) {
+            var e = window.event || e;
+            if (e.stopPropagation) {
+                e.stopPropagation(); //w3c
+            } else {
+                e.cancelBubble = true; // ie
+            }
+            alert('div2')
+        }
+
+        oA.onclick = function(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                e.returnValue = false;
+            }
+        }
+
+    </script>
+</body>
+</html>
