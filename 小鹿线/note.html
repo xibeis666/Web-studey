@@ -29,7 +29,7 @@
     添加：appendChild
     移除：removeChild
     移动：replaceChild
-    插入：insertBefore
+    插入：insertBefore 
     复制：clone
     创建：creatElement
     查找节点：getElementById
@@ -57,6 +57,23 @@
     是什么： 严格模式(解决一下js的怪癖行为)
     好处： 使代码更严谨，压缩节约文件大小
     坏处： 阻塞后面代码的运行，压缩出现错误
+    12) js创建对象的方式
+        1> {} | new Object()
+        2> 构造函数new
+        3> Object.create()
+    13) 判断图片加载完毕 img.complete 返回布尔型数据
+    14) 事件委托
+    var e = window.event || e;
+    var tar = e.target || e.srcElement;
+    15) let 和 const的区别
+    const 声明必须赋值
+    const不可变化的量（常量）
+    16) 把arguments转换成真正的数组 Array.from 
+    17) bind,call,apply的区别
+        bind ==>返回函数
+        call ==>函数.call(null,1,2,3,4)
+        apply ==>函数.apply(null,[1,2,3,4])
+
     -->
 
 </body>

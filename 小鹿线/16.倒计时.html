@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <time id="time"></time>
+    <script>
+        function DataCount() {
+            var time = document.getElementById('time');
+            var data = new Date();
+            var year = data.getFullYear();
+
+            var nextData = new Date();
+            nextData.setFullYear(year +1);
+            nextData.setMonth(0,1);
+            nextData.setHours(0,0,0);
+
+            var iTime = nextData.getTime() - data.getTime();
+            var isecond = parseInt(iTime/1000);
+            var newDay = parseInt(isecond/24/60/60);
+            var modeDay = isecond%(24*60*60);
+            var newHour = parseInt(modeDay/60/60);
+            var modeHour = modeDay%(60*60);
+            var newMinute = parseInt(modeHour/60);
+            var modeMinute = modeHour%60;
+            var newSecond = parseInt(modeMinute);
+            
+            time.innerHTML = year+"距离明年还有"+newDay+"天"+newHour+"小时"+
+            newMinute+"分钟"+newSecond+"秒";
+        }
+        DataCount();
+        setInterval(DataCount, 1000);
+    </script>
+</body>
+</html>

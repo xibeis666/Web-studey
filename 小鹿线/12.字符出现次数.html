@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "GoodmorningIamgladtobforthisinterviewFirstletmeintroducemy";
+
+        function fondMaxChart(str){
+            var obj = {};
+            for(var i=0;i<str.length;i++) {
+                var chart = str.charAt(i);
+                if(obj[chart]) {
+                    obj[chart]++
+                } else {
+                    obj[chart] = 1;
+                }
+            }
+            console.log(obj);
+            var max = 0;
+            var maxChart = null;
+            for(var k in obj) {
+                if(max<obj[k]) {
+                    max = obj[k];
+                    maxChart = k;
+                }
+            }
+            console.log("出现最多的字母是："+maxChart+"，它出现了"+max+"次");
+        }
+        fondMaxChart(str);
+        
+    </script>
+</body>
+</html>

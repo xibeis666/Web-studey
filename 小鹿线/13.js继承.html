@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function a() {
+            this.a = 'aaa';
+        }
+        function b() {
+            // call借用构造函数 a.call(this);
+            this.b = 'bbb';
+        }
+        // 原型链 b.prototype = new a(); 
+        var obj = new b();
+        console.log(obj.a);
+    </script>
+</body>
+</html>

@@ -8,26 +8,42 @@
 <body>
     <script>
         var arr1 = [5,'5',5,3,2,3,'2',1];
-        function unique1(arr) {
+
+        var arr = [1,3,2,1,3];
+        // 为数组原型添加去重方法
+        Array.prototype.unique = function() {
             var brr1 = [];
             var obj1 = {};
-            //  var obj = {
-            //     5: 1,
-            //     5: 2
-            //  } ==> 5:2
-            for (var i = 0; i<arr.length; i++){
-                if (!obj1[arr[i]]) {
-                    obj1[arr[i]] = true;
-                    brr1.push(arr[i]);
+            for (var i = 0; i<this.length; i++){
+                if (!obj1[this[i]]) {
+                    obj1[this[i]] = true;
+                    brr1.push(this[i]);
                 }
             }
-            console.log(brr1);
+            return brr1;
         }
-        unique1(arr1);
+        console.log(arr.unique());
 
-        // ES6 使用new Set 去重，缺点：无法去除同值不同类型
-        var brr2 = new Set(arr1);
-        console.log(brr2);
+        // function unique1(arr) {
+        //     var brr1 = [];
+        //     var obj1 = {};
+        //     //  var obj = {
+        //     //     5: 1,
+        //     //     5: 2
+        //     //  } ==> 5:2
+        //     for (var i = 0; i<arr.length; i++){
+        //         if (!obj1[arr[i]]) {
+        //             obj1[arr[i]] = true;
+        //             brr1.push(arr[i]);
+        //         }
+        //     }
+        //     console.log(brr1);
+        // }
+        // unique1(arr1);
+
+        // // ES6 使用new Set 去重，缺点：无法去除同值不同类型
+        // var brr2 = new Set(arr1);
+        // console.log(brr2);
     </script>
 </body>
 </html>
